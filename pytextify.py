@@ -26,7 +26,6 @@ if uploaded_file is not None:
 
     with st.container(border=True):
         st.write_stream(stream_data)
-    msg.empty()
 # Footer or additional info
 st.write("---")
 st.write("PyTextify © 2024. Transcribe your videos.")
