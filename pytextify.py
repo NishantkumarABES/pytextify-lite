@@ -1,8 +1,33 @@
 import streamlit as st
 from video_to_text import video_to_text
+import streamlit.components.v1 as components
 import time 
 
 st.set_page_config(layout="wide")
+G_ID = st.secrets["Google_Analytics_Measuremen_ID"]
+
+custom_head = """
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPTDRJYTTT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+""" + f""" gtag('config', {G_ID});
+    </script>
+</head>
+<body>
+    <h1>Welcome to My Streamlit App</h1>
+    <button onclick="showAlert()">Click Me</button>
+</body>
+</html>
+"""
+
+# Use Streamlit's HTML component to render the content
+components.html(custom_head, height=300)
 
 st.image(r"images/logo_path.png", width=150)
 st.title("Welcome to PyTextify")
