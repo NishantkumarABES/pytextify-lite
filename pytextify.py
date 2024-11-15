@@ -9,16 +9,9 @@ st.set_page_config(layout="wide")
 # Inject Google Analytics JavaScript in the <head> section
 components.html(
     """
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF606H6E0K"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YF606H6E0K');
-    </script>
+    <script src="analytics.js"></script>
     """,
-    height=0,  # Set height to 0 to avoid visible space
+    height=0,
 )
 
 # App content
